@@ -1,0 +1,18 @@
+<template id="schedule-list">
+    <style>
+        @import url(animate.css);
+        .subsection::before {
+            height: 32px;
+            width: 100%;
+            display: block;
+            background: #e5e5e5;
+            content: attr(title);
+            font-size: 16px;
+            line-height: 32px;
+            text-indent: 96px;
+        }
+    </style>
+    <div id="whole" class="subsection" title='全天'></div>
+    <div id="am" class="subsection" title='上午'></div>
+    <div id="pm" class="subsection" title='下午'></div>
+</template>

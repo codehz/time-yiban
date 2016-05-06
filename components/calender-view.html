@@ -1,0 +1,91 @@
+<template id="calender-view">
+    <style>
+        @import url(animate.css);
+        .root {
+            background: #455a6f;
+            padding: 15px;
+            color: white;
+            font-size: 14px;
+            border-radius: 15px;
+        }
+
+        .fill {
+            flex: 1;
+        }
+
+        .last-year,
+        .next-year {
+            border-top: 1px solid white;
+            border-left: 1px solid white;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+        }
+
+        .last-year {
+            transform: rotate(45deg) translateY(5px);
+        }
+
+        .next-year {
+            transform: rotate(-135deg) translateY(5px);
+        }
+
+        .year-selector {
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+        }
+
+        .weekday-bar {
+            display: flex;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .weekday-bar > div {
+            flex: 1 0 14%;
+            text-align: center;
+        }
+
+        #day-view {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #day-view > div {
+            flex: 1 0 14%;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            color: #a0a0a0;
+        }
+
+        #day-view > div.current-month {
+            background: #3c4f60;
+            color: white;
+        }
+
+        #day-view > div.current,
+        #day-view > div:hover {
+            background: #aaa;
+        }
+    </style>
+    <div class="root">
+        <div class="year-selector">
+            <span id="year"></span>
+            <div class="fill"></div>
+            <div class="last-year"></div>
+            <div class="next-year"></div>
+        </div>
+        <div class="weekday-bar">
+            <div id="Su"></div>
+            <div id="Mo"></div>
+            <div id="Tu"></div>
+            <div id="We"></div>
+            <div id="Th"></div>
+            <div id="Fr"></div>
+            <div id="Sa"></div>
+        </div>
+        <div id="day-view"></div>
+    </div>
+</template>

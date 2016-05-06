@@ -1,0 +1,72 @@
+<template>
+    <style>
+        #left {
+            width: 72px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 25px;
+        }
+
+        #left-image {
+            width: 50px;
+            height: 50px;
+        }
+
+        .root {
+            width: 100%;
+            min-height: 120px;
+            display: flex;
+            position: relative;
+            border: 1px solid #ccc;
+        }
+
+        .button-bar {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            font-size: 12px;
+            color: #777;
+            border-radius: 12px;
+            border: #e5e5e5 1px solid;
+            background: white;
+            height: 24px;
+            line-height: 24px;
+            padding: 0 10px;
+            transition: all ease .1s;
+            box-shadow: 0 0 0 rgba(255, 255, 255, 0.5) inset;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        #content-container > div {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        #title {
+            display: inline-block;
+            font-size: 20px;
+            margin: 12px 0;
+            font-weight: bold;
+        }
+    </style>
+    <div class="root">
+        <div id="left">
+            <div id="left-image"></div>
+        </div>
+        <div id="right">
+            <span id="title"></span>
+            <div id="content-container"></div>
+            <div class="button-bar">
+                <div class="button">编辑</div>
+                <div class="button">删除</div>
+            </div>
+        </div>
+    </div>
+</template>

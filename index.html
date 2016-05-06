@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+<head>
+    <meta viewport="initial-scale=1">
+    <meta charset="utf-8">
+    <title>日程</title>
+    <link rel="stylesheet" href="index.css" media="screen" title="no title" charset="utf-8">
+
+    <link rel="import" href="components/push-item.html" tag="push-item">
+    <link rel="import" href="components/schedule-item.html" tag="schedule-item">
+    <link rel="import" href="components/schedule-list.html" tag="schedule-list">
+    <link rel="import" href="components/calender-view.html" tag="calender-view">
+    <link rel="import" href="components/count-down.html" tag="count-down">
+    <link rel="import" href="components/moment-card.html" tag="moment-card">
+    <link rel="import" href="components/detail-item.html" tag="detail-item">
+    <link rel="import" href="tabs/schedule-tab.html" tag="schedule-tab">
+    <link rel="import" href="tabs/record-tab.html" tag="record-tab">
+
+    <script src="pie-chart.js"></script>
+    <script src="tab-stub.js"></script>
+    <script src="loader.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="logo" id="logo">
+            <div class="button" selected-tab='schedule-tab'>日程</div>
+            <div class="button" selected-tab='record-tab'>记录</div>
+            <div class="fill"></div>
+            <div><img src="avatar.png" alt="avatar"></div>
+        </div>
+    </header>
+    <tab-stub></tab-stub>
+    <!-- 假装来自服务器 -->
+    <script>
+        ;
+        (function(global) {
+            global.datasource = {
+                config: {
+                    schedule: {
+                        studyplan: {
+                            color: '#b3d465',
+                            title: '学习计划'
+                        },
+                        life: {
+                            color: '#ea68a2',
+                            title: '生活'
+                        },
+                        course: {
+                            color: '#e60012',
+                            title: '课程'
+                        },
+                        activity: {
+                            color: '#009e96',
+                            title: '校园活动'
+                        }
+                    },
+                    activity: {
+                        '学习': {
+                            color: '#21acec',
+                            image: 'icon/pen.svg'
+                        },
+                        '阅读': {
+                            color: '#eb6100',
+                            image: 'icon/paper.svg'
+                        },
+                        '上课': {
+                            color: '#bcd978',
+                            image: 'icon/school.svg'
+                        },
+                        '吃饭': {
+                            color: '#dabd92',
+                            image: 'icon/chicken.svg'
+                        },
+                        '午休': {
+                            color: '#fbbbd8',
+                            image: 'icon/sun.svg'
+                        }
+                    }
+                },
+                now: [{
+                    type: '学习',
+                    content: '未设定备注',
+                    time: '00:43:37',
+                }, {
+                    type: '阅读',
+                    content: '《世界简史》',
+                    time: '00:12:21'
+                }],
+                statistics: {
+                    today: [{
+                        type: '上课',
+                        multiple: [{
+                            start: '08:00',
+                            end: '09:40'
+                        }, {
+                            start: '10:00',
+                            end: '11:40'
+                        }, {
+                            start: '16:00',
+                            end: '17:40'
+                        }, {
+                            start: '19:00',
+                            end: '20:40'
+                        }]
+                    }, {
+                        type: '吃饭',
+                        multiple: [{
+                            start: '07:20',
+                            end: '07:40'
+                        }, {
+                            start: '12:21',
+                            end: '12:56'
+                        }]
+                    }, {
+                        type: '午休',
+                        multiple: [{
+                            start: '12:40',
+                            end: '13:20'
+                        }]
+                    }]
+                },
+                push: [{
+                    title: '科创部例会',
+                    description: '今天12点20分在6A520，需要带上纸和笔',
+                    who: '计算机与软件工程学院科创部',
+                    time: '一小时前',
+                    target: {
+                        path: 'tomorrow>pm>0',
+                        data: {
+                            title: '科创部例会',
+                            description: '6A520,需要带上纸和笔',
+                            time: '12:20',
+                            type: 'activity'
+                        }
+                    },
+                    validity: '5月6日12:00',
+                }, {
+                    title: '艺术学院毕业展',
+                    description: '邀请您参加下周一在艺术中心举行的艺术学院毕业展',
+                    who: '艺术学院',
+                    time: '一小时前',
+                    validity: '5月20日00:00'
+                }],
+                schedules: {
+                    today: {
+                        whole: [{
+                            title: '阅读《世界简史》',
+                            type: 'studyplan'
+                        }, {
+                            title: '完成一章四级听力练习',
+                            type: 'studyplan'
+                        }, {
+                            title: '洗衣服',
+                            type: 'life'
+                        }],
+                        am: [{
+                            title: '网络与信息安全',
+                            description: '4A-302多媒体160座',
+                            time: '8:00',
+                            type: 'course'
+                        }, {
+                            title: '大学英语(4)',
+                            description: '6C-403多媒体84座',
+                            time: '10:00',
+                            type: 'course'
+                        }],
+                        pm: [{
+                            title: '形式与政策2（下）',
+                            description: '4B-502多媒体教室122座',
+                            time: '16:00',
+                            type: 'course'
+                        }, {
+                            title: '算法设计与分析',
+                            description: '6C-428 多媒体84座',
+                            time: '19:00',
+                            type: 'course'
+                        }, {
+                            title: '国际交流社沙龙',
+                            description: '需要携带社团证',
+                            time: '21:00',
+                            type: 'activity'
+                        }]
+                    },
+                    tomorrow: {
+                        whole: [{
+                            title: '阅读《世界简史》',
+                            type: 'studyplan'
+                        }, {
+                            title: '完成一章四级听力练习',
+                            type: 'studyplan'
+                        }, {
+                            title: '洗衣服',
+                            type: 'life'
+                        }],
+                        am: [{
+                            title: '网络与信息安全',
+                            description: '4A-302多媒体160座',
+                            time: '8:00',
+                            type: 'course'
+                        }, {
+                            title: '大学英语(4)',
+                            description: '6C-403多媒体84座',
+                            time: '10:00',
+                            type: 'course'
+                        }],
+                        pm: [{
+                            title: '形式与政策2（下）',
+                            description: '4B-502多媒体教室122座',
+                            time: '16:00',
+                            type: 'course'
+                        }, {
+                            title: '算法设计与分析',
+                            description: '6C-428 多媒体84座',
+                            time: '19:00',
+                            type: 'course'
+                        }, {
+                            title: '国际交流社沙龙',
+                            description: '需要携带社团证',
+                            time: '21:00',
+                            type: 'activity'
+                        }]
+                    }
+                }
+            }
+        })(window);
+    </script>
+    <script src="timeliner.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

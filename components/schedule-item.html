@@ -1,0 +1,93 @@
+<template id="schedule-item">
+    <style>
+        @import url(animate.css);
+        :host {
+            width: 100%;
+            display: flex;
+            box-sizing: border-box;
+            align-items: baseline;
+            border-bottom: 1px solid #e5e5e5;
+            border-left: 1px solid #e5e5e5;
+            border-right: 1px solid #e5e5e5;
+            padding: 0 5px;
+            transition: all ease .3s;
+            /*padding: 12px 0;*/
+        }
+
+        :host(:hover) {
+            background: #f7f7f7;
+        }
+
+        #time {
+            width: 60px;
+            box-sizing: border-box;
+            text-align: center;
+            padding-right: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #title {
+            display: block;
+            font-weight: bold;
+        }
+
+        #description {
+            display: block;
+            font-size: 12px;
+            line-height: 20px;
+            color: #a0a0a0;
+        }
+
+        #title-container {
+            flex: 1;
+            border-left: solid 5px;
+            padding: 12px 0;
+            box-sizing: border-box;
+            padding-left: 24px;
+            transition: all ease .3s;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        :host(:hover) #title-container {
+            border-left: solid 10px;
+            /*padding-left: 18px;*/
+        }
+
+        .button {
+            display: inline-block;
+            font-size: 12px;
+            color: #e5e5e5;
+            border-radius: 12px;
+            border: #e5e5e5 1px solid;
+            background: white;
+            height: 24px;
+            line-height: 24px;
+            padding: 0 10px;
+            margin: 0 5px;
+            transition: all ease .3s;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        :host(:hover) .button {
+            border-color: #ccc;
+            color: black;
+        }
+
+        .button:active {
+            background: #e5e5e5;
+        }
+    </style>
+    <span id="time"></span>
+    <div id="title-container">
+        <span id="title"></span>
+        <span id="description"></span>
+    </div>
+    <div id="edit" class="button">编辑</div>
+    <div id="notify" class="button">提醒</div>
+    <div id="delete" class="button">删除</div>
+</template>

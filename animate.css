@@ -1,0 +1,47 @@
+
+@keyframes show-opacity
+{
+    0%
+    {
+        opacity: 0;
+        -webkit-filter: saturate(0) blur(5px);
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        -webkit-filter: saturate(0.8) blur(0px);
+    }
+    100%
+    {
+        opacity: 1;
+        -webkit-filter: saturate(1);
+    }
+}
+
+@keyframes removing {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+    }
+}
+
+@keyframes inserting {
+    0% {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        max-height: 72px;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,48 @@
+<template>
+    <style>
+        #container {
+            display: flex;
+            height: 100px;
+            align-items: center;
+            margin: 5px 0;
+        }
+        #image {
+            margin: 0 25px;
+            width: 50px;
+            height: 50px;
+        }
+        h2 {
+            margin: 0;
+            font-weight: normal;
+        }
+        .content-container {
+            /*margin-left: 25px;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: 20px 0;
+            box-sizing: border-box;
+        }
+        .content-container > * {
+            display: block;
+        }
+        .fill {
+            flex: 1;
+        }
+        #stop-button {
+            padding: 0 40px;
+        }
+    </style>
+
+    <div id="container">
+        <div id="image"></div>
+        <div class="content-container">
+            <h2 id="title"></h2>
+            <span id="description"></span>
+        </div>
+        <div class="fill"></div>
+        <count-down></count-down>
+        <img id="stop-button" src="stop.png">
+    </div>
+</template>

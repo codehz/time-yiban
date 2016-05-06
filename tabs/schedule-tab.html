@@ -1,0 +1,29 @@
+<template>
+    <style>
+    </style>
+    <div class="container" id="schedule-tab">
+        <section class="block" id="push">
+            <h1 class="title">推送</h1>
+            <div class="content"></div>
+        </section>
+        <aside>
+            <div class="button" id="insert">添加新日程</div>
+            <calender-view current-date='2016-05-05'></calender-view>
+            <div class="categories">
+                <div class="title">日程分类</div>
+                <a href="#">管理分类</a>
+                <div id="categories-list">
+                </div>
+            </div>
+        </aside>
+        <section class="block" id="schedules">
+            <div class="day" x-tag="today">
+                <h2 class="title">今日</h2>
+            </div>
+            <div class="day" x-tag="tomorrow">
+                <h2 class="title">明日</h2>
+            </div>
+        </section>
+    </div>
+    <script src='tabs/schedule-tab.js'></script>
+</template>

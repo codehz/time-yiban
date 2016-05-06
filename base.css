@@ -1,0 +1,66 @@
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-family: 'Microsoft YaHei Light';
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    background: #455a6f;
+    border-bottom: 16px solid #3c4f60;
+    box-sizing: border-box;
+}
+
+.header-container {
+    width: 1000px;
+    height: calc(100% + 16px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.header-container > * {
+    margin-bottom: 16px;
+}
+
+.fill {
+    flex: 1;
+}
+
+.header-container > img#logo {
+    margin-right: 32px;
+}
+
+.header-container > .button {
+    height: 100%;
+    margin-bottom: 0;
+    line-height: 84px;
+    width: 100px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 24px;
+    color: white;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.header-container > .button[selected] {
+    background: #303f4d;
+    border-bottom: 16px solid #2a3743;
+}
+
+.container
+{
+    width: 1000px;
+    margin: 0 auto;
+}

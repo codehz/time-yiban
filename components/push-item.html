@@ -1,0 +1,93 @@
+<template id="push-item">
+    <!--不能使用link....浏览器不支持-->
+    <style>
+        @import url(animate.css);
+        :host {
+            display: block;
+            background: #fdf0f1;
+            margin: 5px 0;
+            position: relative;
+            height: 100px;
+            padding: 25px;
+            box-sizing: border-box;
+            perspective: 100;
+            -webkit-perspective: 100;
+            transform-style: preserve-3d;
+            transition: all ease .1s;
+        }
+
+        :host(:hover) {
+            background: #fdd;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        #description {
+            font-size: 12px;
+            color: #959595;
+        }
+
+        .source {
+            color: #959595;
+            position: absolute;
+            right: 25px;
+            bottom: 15px;
+            font-size: 12px;
+        }
+
+        .source span {
+            font-weight: bolder;
+        }
+
+        .action-area {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+
+        .action-area .button {
+            display: inline-block;
+            font-size: 12px;
+            color: #777;
+            border-radius: 12px;
+            border: #e5e5e5 1px solid;
+            background: white;
+            height: 24px;
+            line-height: 24px;
+            padding: 0 10px;
+            transition: all ease .1s;
+            box-shadow: 0 0 0 rgba(255, 255, 255, 0.5) inset;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        :host(:hover) .action-area .button {
+            background: #fdf0f1;
+            border-color: #bbb;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5) inset;
+        }
+
+        .action-area .button:active {
+            background: #faa;
+            color: white;
+            border: rgba(0, 0, 0, 0) 1px solid;
+        }
+    </style>
+
+    <h2 id="title"></h2>
+    <span id="description"></span>
+    <div class="action-area">
+        <div id="confirm" class="button">确认并添加到日程</div>
+        <div id="delete" class="button">删除</div>
+    </div>
+    <div class="source">
+        由
+        <span id="who"></span> 于
+        <span id="time"></span> 推送, 有效期至
+        <span id="validity"></span>
+    </div>
+</template>

@@ -1,0 +1,31 @@
+<template>
+    <div class="container" id="record-tab">
+        <section id="now" class="block">
+            <h1 class="title">此刻</h1>
+        </section>
+        <aside class="right">
+            <h3 class="title">点击开始记录新活动</h3>
+            <a href="#">管理分类</a>
+            <div class="content-container"></div>
+            <div id="insert-record" class="button">手动添加记录</div>
+            <calender-view current-date='2016-05-05'></calender-view>
+        </aside>
+        <div class="left">
+            <div class="statistics">
+                <div class="tab">
+                    <span tag="today" selected>今天</span>
+                    <span tag="week">本周</span>
+                    <span tag="month">本月</span>
+                </div>
+                <div class="content-container">
+                    <pie-chart></pie-chart>
+                </div>
+            </div>
+            <div class="detail-panel">
+                <h1 class="title">今日</h1>
+                <div class="content-container"></div>
+            </div>
+        </div>
+    </div>
+    <script src='tabs/record-tab.js'></script>
+</template>

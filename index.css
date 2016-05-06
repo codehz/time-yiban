@@ -1,0 +1,199 @@
+@import url(base.css);
+
+.container
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.container > section .title,
+.detail-panel > .title
+{
+    font-size: 36px;
+    font-weight: normal;
+
+    margin: 25px 0;
+}
+
+.container > aside
+{
+    display: block;
+    float: right;
+
+    box-sizing: border-box;
+    width: 300px;
+    padding-left: 20px;
+}
+
+#schedule-tab aside
+{
+    margin-top: 90px;
+}
+
+.container > aside > .button
+{
+    font-size: 24px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-radius: 15px;
+    background: #eee;
+}
+
+.container > aside > .categories
+{
+    margin-top: 25px;
+}
+
+.container > aside > .categories > .title
+{
+    font-size: 20px;
+}
+
+.container > aside > .categories > a
+{
+    font-size: 12px;
+
+    float: right;
+
+    margin-top: -20px;
+
+    text-decoration: none;
+
+    color: #005982;
+}
+
+#categories-list > div
+{
+    display: flex;
+
+    height: 20px;
+    margin-top: 10px;
+
+    align-items: center;
+}
+
+#categories-list > div > .marker
+{
+    width: 7px;
+    height: 7px;
+    margin: 0 5px;
+
+    border-radius: 100%;
+}
+
+#insert
+{
+    margin-bottom: 25px;
+}
+
+#schedules .day
+{
+    width: 700px;
+    margin-bottom: 64px;
+}
+
+.left
+{
+    width: 700px;
+}
+
+.left > .statistics
+{
+    background: linear-gradient( to bottom, #f6f6f6, white );
+    padding: 15px;
+}
+
+.left > .statistics > .tab > span {
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.left > .statistics > .content-container {
+    height: 300px;
+}
+
+.left > .statistics > .tab > span[selected] {
+    font-weight: bold;
+    font-family: 'Microsoft YaHei Bold';
+    text-decoration: underline;
+    color: #455a6f;
+}
+
+.left > .statistics > .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right a {
+    float: right;
+
+    margin-top: -40px;
+    text-decoration: none;
+    color: #678ea7;
+}
+
+.right .button {
+    margin-bottom: 25px;
+}
+
+.detail-panel {
+    margin-bottom: 50px;
+}
+
+@keyframes show-opacity
+{
+    0%
+    {
+        opacity: 0;
+
+        -webkit-filter: saturate(0);
+    }
+    100%
+    {
+        opacity: 1;
+
+        -webkit-filter: saturate(1);
+    }
+}
+
+@keyframes removing
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        overflow: hidden;
+
+        height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        opacity: 0;
+    }
+}
+
+@keyframes inserting
+{
+    0%
+    {
+        overflow: hidden;
+
+        height: 0;
+
+        opacity: 0;
+    }
+
+    100%
+    {
+        height: auto;
+
+        opacity: 1;
+    }
+}
